@@ -34,9 +34,9 @@ function HeaderMenu({ data }: HeaderMenuType) {
   }
   return (
     <Header style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-      <div className="logo">
-        <Image src="/images/logo.png" alt="" className="logo-desktop" width={150} height={50} />
-      </div>
+      <h3 className="logo" style={{background: 'white', borderRadius: '2px', height: '40px'}}>
+        LOGO
+      </h3>
       <Menu
         theme="dark"
         mode="horizontal"
