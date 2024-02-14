@@ -3,6 +3,7 @@ import { Balance } from '@/components'
 import { checkSymbol } from '@/crypto-all-in-one';
 import './style.scss'
 import { SearchResult, SearchResultPropsType } from '@/helpers/type';
+import Image from 'next/image';
 
 function SearchResult({ list, search, onChange }: SearchResultPropsType) {
   const [result, setResult] = useState<SearchResult>({})
@@ -51,12 +52,14 @@ function SearchResult({ list, search, onChange }: SearchResultPropsType) {
                   () => {
                     onChange && onChange(result)
                   }
-                }>
-                  <div className="search-result__data">
-                    <img src={result.link} alt="" />
+                }
+                style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', cursor: 'pointer', borderRadius: '10px', padding: '10px', border: '1px solid #ccc', marginTop: '10px' }}
+                >
+                  <div className="search-result__data" style={{ display: 'flex', alignItems: 'center' }}>
+                    <Image src={result.link || ''} alt="" width={24} height={24} style={{ marginRight: '10px', borderRadius: '50%' }} />
                     <span>{result.value}</span>
                   </div>
-                  <div className="search-result__balance">
+                  <div className="search-result__balance" style={{ display: 'flex', alignItems: 'center' }}>
                     <Balance tokenAddress={result.key as `0x${string}`} />
                   </div>
                 </div>

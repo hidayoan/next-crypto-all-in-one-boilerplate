@@ -45,9 +45,9 @@ function InputSwap({ list, data, asyncData }: InputSwapType) {
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             {
                                 list.find((item) => item.key === address) ? (
-                                    <Image src={list.find((item) => item.key === address).link} alt="" width={24} height={24} />
+                                    <Image src={list.find((item) => item.key === address).link} alt="" width={24} height={24} style={{ marginRight: '10px', borderRadius: '50%' }} />
                                 ) : (
-                                    <Image src='/tokens/unknown.png' alt="" width={24} height={24} />
+                                    <Image src='/tokens/unknown.png' alt="" width={24} height={24} style={{ marginRight: '10px', borderRadius: '50%' }} />
                                 )
                             }
                             <span>
